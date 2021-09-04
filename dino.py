@@ -29,8 +29,8 @@ class Player:
         self.x = x
         self.y = y
         self.images = [
-            pygame.image.load("img/dino_first.jpg"),
-            pygame.image.load("img/dino_second.jpg")
+            pygame.image.load("dino_first.jpg"),
+            pygame.image.load("dino_second.jpg")
         ]
         self.image_index = 0
         self.current = pygame.transform.scale(self.images[self.image_index % len(self.images)],
@@ -52,7 +52,7 @@ player = Player(30, 345)
 class Obstacles:
     def __init__(self) -> None:
         self.obstacles = []
-        self.obstacle = pygame.image.load("img/obstacle.jpg").convert_alpha()
+        self.obstacle = pygame.image.load("obstacle.jpg").convert_alpha()
         self.obstacle.set_colorkey((255, 255, 255))
 
     def create_obstacle(self):
@@ -116,8 +116,8 @@ while True:
     else:
         obstacles.obstacles.clear()
         speed = 0
-        screen.blit(pygame.image.load("img/restart.jpg"),
-					pygame.image.load("img/restart.jpg").get_rect(center=(width / 2, height / 2)))
+        screen.blit(pygame.image.load("restart.jpg"),
+					pygame.image.load("estart.jpg").get_rect(center=(width / 2, height / 2)))
 
     groundx -= speed
     if groundx <= -2400:
